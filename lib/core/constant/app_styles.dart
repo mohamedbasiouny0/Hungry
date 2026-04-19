@@ -51,7 +51,7 @@ class AppStyles {
   static final TextStyle robtoRegular14 = GoogleFonts.roboto(
     fontWeight: .w400,
     fontSize: 14,
-    color: AppColors.primaryFontColor,
+    color: AppColors.extraSoftGreyColor,
   );
   static final TextStyle robtoMedium16 = GoogleFonts.roboto(
     fontWeight: .w500,
