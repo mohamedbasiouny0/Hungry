@@ -46,7 +46,13 @@ class _SignUpViewState extends State<SignUpView> {
                 ),
                 const Gap(50),
                 CustomTextFormField(
-                  hintText: 'Enter Your Email',
+                  hintText: 'Name',
+                  validator: (value) => nameValidation(value),
+                  visiable: false,
+                ),
+                const Gap(16),
+                CustomTextFormField(
+                  hintText: 'Email Address',
                   validator: (value) => emailValidation(value),
                   visiable: false,
                 ),
@@ -61,7 +67,7 @@ class _SignUpViewState extends State<SignUpView> {
                       visable ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
                     ),
                   ),
-                  hintText: 'Enter Your Password',
+                  hintText: 'Password',
                   validator: (value) {
                     return passwordValidation(value);
                   },
@@ -119,6 +125,13 @@ class _SignUpViewState extends State<SignUpView> {
         ),
       ),
     );
+  }
+
+  String? nameValidation(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Name is required';
+    }
+    return null;
   }
 
   String? passwordValidation(String? value) {
