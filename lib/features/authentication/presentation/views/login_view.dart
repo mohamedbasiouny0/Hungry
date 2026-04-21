@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/assets.dart';
+import 'package:test2/features/authentication/presentation/views/widgets/custom_elevated_button.dart';
 import 'package:test2/features/authentication/presentation/views/widgets/custom_text_form_field.dart';
 
 class LoginView extends StatefulWidget {
@@ -23,6 +24,7 @@ class _LoginViewState extends State<LoginView> {
       body: Center(
         child: Container(
           margin: .symmetric(horizontal: 16.r),
+          padding: .symmetric(horizontal: 16.r),
           decoration: BoxDecoration(
             color: AppColors.primaryColor,
             // ignore: prefer_const_constructors
@@ -40,37 +42,39 @@ class _LoginViewState extends State<LoginView> {
                   height: 40.h,
                 ),
                 const Gap(50),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.r),
-                  child: CustomTextFormField(
-                    hintText: 'Enter Your Email',
-                    validator: (String? p1) {
-                      return null;
-                    },
-                    visiable: false,
-                  ),
+                CustomTextFormField(
+                  hintText: 'Enter Your Email',
+                  validator: (String? p1) {
+                    return null;
+                  },
+                  visiable: false,
                 ),
                 const Gap(16),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16.r),
-                  child: CustomTextFormField(
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        visable = !visable;
-                        setState(() {});
-                      },
-                      child: Icon(
-                        visable ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
-                      ),
+                CustomTextFormField(
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      visable = !visable;
+                      setState(() {});
+                    },
+                    child: Icon(
+                      visable ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
                     ),
-                    hintText: 'Enter Your Password',
-                    validator: (String? p1) {
-                      return null;
-                    },
-                    visiable: visable,
                   ),
+                  hintText: 'Enter Your Password',
+                  validator: (String? p1) {
+                    return null;
+                  },
+                  visiable: visable,
                 ),
-                const Gap(16),
+                const Gap(50),
+                CustomElevatedButton(
+                  text: 'Login',
+                  onPressed: () {},
+                  backgroundColor: Colors.white,
+                  foregroundColor: AppColors.primaryColor,
+                  side: const BorderSide(color: Colors.white, width: 3),
+                ),
+                const Gap(50),
               ],
             ),
           ),
