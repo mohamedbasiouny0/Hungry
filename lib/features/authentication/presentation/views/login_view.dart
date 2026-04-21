@@ -67,12 +67,26 @@ class _LoginViewState extends State<LoginView> {
                   visiable: visable,
                 ),
                 const Gap(50),
-                CustomElevatedButton(
-                  text: 'Login',
-                  onPressed: () {},
-                  backgroundColor: Colors.white,
-                  foregroundColor: AppColors.primaryColor,
-                  side: const BorderSide(color: Colors.white, width: 3),
+                Row(
+                  children: [
+                    Expanded(
+                      child: CustomElevatedButton(
+                        text: 'Login',
+                        onPressed: () {},
+                        backgroundColor: Colors.white,
+                        foregroundColor: AppColors.primaryColor,
+                        side: const BorderSide(color: Colors.white, width: 3),
+                      ),
+                    ),
+                    const Gap(16),
+                    Expanded(
+                      child: CustomElevatedButton(
+                        text: 'SignUp',
+                        onPressed: () {},
+                        side: const BorderSide(color: Colors.white, width: 3),
+                      ),
+                    ),
+                  ],
                 ),
                 const Gap(50),
               ],
