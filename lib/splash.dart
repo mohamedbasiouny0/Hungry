@@ -1,8 +1,12 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/assets.dart';
+import 'package:test2/core/routes/routing_helper.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -22,9 +26,14 @@ class _SplashViewState extends State<SplashView>
   void initState() {
     super.initState();
 
+    Future.delayed(
+      const Duration(milliseconds: 2500),
+      () => context.go(RoutingHelper.login),
+    );
+
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 2),
+      duration: const Duration(milliseconds: 1500),
     );
 
     fadeAnimation = Tween<double>(
@@ -54,13 +63,11 @@ class _SplashViewState extends State<SplashView>
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.heightOf(context);
-
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: Column(
         children: [
           Gap(height * 0.31),
-
           FadeTransition(
             opacity: fadeAnimation,
             child: ScaleTransition(

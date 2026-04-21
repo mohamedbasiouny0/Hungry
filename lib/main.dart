@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:test2/splash.dart';
+import 'package:test2/core/routes/go_router.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,9 +8,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      home: SplashView(),
+      routerConfig: router,
     );
   }
 }

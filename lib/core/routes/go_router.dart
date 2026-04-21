@@ -1,0 +1,20 @@
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:test2/core/routes/routing_helper.dart';
+import 'package:test2/features/authentication/presentation/views/login_view.dart';
+import 'package:test2/splash.dart';
+
+// ignore: unused_element
+final GoRouter router = GoRouter(
+  routes: <RouteBase>[
+    GoRoute(
+      path: RoutingHelper.splash,
+      builder: (BuildContext context, GoRouterState state) =>
+          const SplashView(),
+    ),
+    GoRoute(
+      path: RoutingHelper.login,
+      builder: (BuildContext context, GoRouterState state) => const LoginView(),
+    ),
+  ],
+);
