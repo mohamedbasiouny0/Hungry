@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/assets.dart';
+import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/authentication/presentation/views/widgets/custom_elevated_button.dart';
 import 'package:test2/features/authentication/presentation/views/widgets/custom_text_form_field.dart';
 
@@ -70,7 +72,11 @@ class _LoginViewState extends State<LoginView> {
                     Expanded(
                       child: CustomElevatedButton(
                         text: 'Login',
-                        onPressed: () {},
+                        onPressed: () {
+                          if (formKey.currentState!.validate()) {
+                            context.go(RoutingHelper.home);
+                          }
+                        },
                         backgroundColor: Colors.white,
                         foregroundColor: AppColors.primaryColor,
                         side: const BorderSide(color: Colors.white, width: 3),
