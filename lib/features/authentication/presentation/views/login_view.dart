@@ -34,68 +34,70 @@ class _LoginViewState extends State<LoginView> {
           ),
           child: Form(
             key: formKey,
-            child: Column(
-              mainAxisSize: .min,
-              children: [
-                const Gap(50),
-                SvgPicture.asset(
-                  Assets.imagesHungryLogo,
-                  width: 258.w,
-                  height: 40.h,
-                ),
-                const Gap(50),
-                CustomTextFormField(
-                  hintText: 'Enter Your Email',
-                  validator: (value) => emailValidation(value),
-                  visiable: false,
-                ),
-                const Gap(16),
-                CustomTextFormField(
-                  suffixIcon: GestureDetector(
-                    onTap: () {
-                      visable = !visable;
-                      setState(() {});
-                    },
-                    child: Icon(
-                      visable ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
-                    ),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: .min,
+                children: [
+                  const Gap(50),
+                  SvgPicture.asset(
+                    Assets.imagesHungryLogo,
+                    width: 258.w,
+                    height: 40.h,
                   ),
-                  hintText: 'Enter Your Password',
-                  validator: (value) {
-                    return passwordValidation(value);
-                  },
-                  visiable: visable,
-                ),
-                const Gap(50),
-                Row(
-                  children: [
-                    Expanded(
-                      child: CustomElevatedButton(
-                        text: 'Login',
-                        onPressed: () {
-                          if (formKey.currentState!.validate()) {
-                            context.go(RoutingHelper.home);
-                          }
-                        },
-                        backgroundColor: Colors.white,
-                        foregroundColor: AppColors.primaryColor,
-                        side: const BorderSide(color: Colors.white, width: 3),
+                  const Gap(50),
+                  CustomTextFormField(
+                    hintText: 'Enter Your Email',
+                    validator: (value) => emailValidation(value),
+                    visiable: false,
+                  ),
+                  const Gap(16),
+                  CustomTextFormField(
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        visable = !visable;
+                        setState(() {});
+                      },
+                      child: Icon(
+                        visable ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
                       ),
                     ),
-                    const Gap(16),
-                    Expanded(
-                      child: CustomElevatedButton(
-                        text: 'SignUp',
-                        onPressed: () {
-                          context.push(RoutingHelper.signUp);
-                        },
-                        side: const BorderSide(color: Colors.white, width: 3),
+                    hintText: 'Enter Your Password',
+                    validator: (value) {
+                      return passwordValidation(value);
+                    },
+                    visiable: visable,
+                  ),
+                  const Gap(50),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: CustomElevatedButton(
+                          text: 'Login',
+                          onPressed: () {
+                            if (formKey.currentState!.validate()) {
+                              context.go(RoutingHelper.home);
+                            }
+                          },
+                          backgroundColor: Colors.white,
+                          foregroundColor: AppColors.primaryColor,
+                          side: const BorderSide(color: Colors.white, width: 3),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                const Gap(50),
-              ],
+                      const Gap(16),
+                      Expanded(
+                        child: CustomElevatedButton(
+                          text: 'SignUp',
+                          onPressed: () {
+                            context.push(RoutingHelper.signUp);
+                          },
+                          side: const BorderSide(color: Colors.white, width: 3),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Gap(50),
+                ],
+              ),
             ),
           ),
         ),
