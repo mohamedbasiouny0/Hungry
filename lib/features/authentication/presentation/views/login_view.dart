@@ -44,9 +44,7 @@ class _LoginViewState extends State<LoginView> {
                 const Gap(50),
                 CustomTextFormField(
                   hintText: 'Enter Your Email',
-                  validator: (String? p1) {
-                    return null;
-                  },
+                  validator: (value) => emailValidation(value),
                   visiable: false,
                 ),
                 const Gap(16),
@@ -61,8 +59,8 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                   hintText: 'Enter Your Password',
-                  validator: (String? p1) {
-                    return null;
+                  validator: (value) {
+                    return passwordValidation(value);
                   },
                   visiable: visable,
                 ),
@@ -95,5 +93,23 @@ class _LoginViewState extends State<LoginView> {
         ),
       ),
     );
+  }
+
+  String? passwordValidation(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Password is required';
+    }
+    return null;
+  }
+
+  String? emailValidation(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'Email is required';
+    }
+    final emailRegex = RegExp(r'^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$');
+    if (!emailRegex.hasMatch(value.trim())) {
+      return 'Enter a valid email';
+    }
+    return null;
   }
 }
