@@ -104,7 +104,7 @@ class _SignUpViewState extends State<SignUpView> {
                             text: 'Sign Up',
                             onPressed: () {
                               if (formKey.currentState!.validate()) {
-                                context.go(RoutingHelper.home);
+                                context.go(RoutingHelper.root);
                               }
                             },
                             backgroundColor: Colors.white,

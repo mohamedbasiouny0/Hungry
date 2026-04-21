@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
-class OrderHistoryView extends StatelessWidget {
-  const OrderHistoryView({super.key});
+class CartView extends StatelessWidget {
+  const CartView({super.key});
 
   @override
   Widget build(BuildContext context) {
