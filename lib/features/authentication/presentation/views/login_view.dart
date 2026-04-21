@@ -86,7 +86,9 @@ class _LoginViewState extends State<LoginView> {
                     Expanded(
                       child: CustomElevatedButton(
                         text: 'SignUp',
-                        onPressed: () {},
+                        onPressed: () {
+                          context.push(RoutingHelper.signUp);
+                        },
                         side: const BorderSide(color: Colors.white, width: 3),
                       ),
                     ),
