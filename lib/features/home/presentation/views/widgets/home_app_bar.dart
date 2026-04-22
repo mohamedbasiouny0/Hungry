@@ -5,14 +5,12 @@ import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/core/constant/assets.dart';
 
 class HomeAppBar extends StatelessWidget {
-  const HomeAppBar({
-    super.key,
-  });
+  const HomeAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      // backgroundColor: Colors.white,
+      backgroundColor: Colors.white,
       toolbarHeight: 100,
       flexibleSpace: Padding(
         padding: const EdgeInsets.only(top: 73, left: 20, right: 20),
@@ -31,19 +29,12 @@ class HomeAppBar extends StatelessWidget {
                     .srcIn,
                   ),
                 ),
-                Text(
-                  'Hello, Mohamed Basiouny',
-                  style: AppStyles.popMedium18,
-                ),
+                Text('Hello, Mohamed Basiouny', style: AppStyles.popMedium18),
               ],
             ),
             ClipRRect(
               borderRadius: .circular(20),
-              child: Image.asset(
-                Assets.imagesAvatar,
-                height: 60,
-                width: 60,
-              ),
+              child: Image.asset(Assets.imagesAvatar, height: 60, width: 60),
             ),
           ],
         ),
