@@ -16,7 +16,9 @@ class HomeCategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.ease,
       margin: isFirst ? const .symmetric(horizontal: 8) : const .only(right: 8),
       height: 50.h,
       padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
