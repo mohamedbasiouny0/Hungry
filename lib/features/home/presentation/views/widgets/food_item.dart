@@ -16,10 +16,18 @@ class FoodItem extends StatelessWidget {
         children: [
           const Center(child: BurgerWidget()),
           const Gap(10),
-          Text('Cheeseburger', style: AppStyles.robtoSemiBold16),
-          Text('Wendy\'s Burger', style: AppStyles.robtoRegular16),
-          const Gap(16),
-          const RateWidget(),
+          Padding(
+            padding: const .only(left: 10),
+            child: Column(
+              crossAxisAlignment: .start,
+              children: [
+                Text('Cheeseburger', style: AppStyles.robtoSemiBold16),
+                Text('Wendy\'s Burger', style: AppStyles.robtoRegular16),
+                const Gap(16),
+                const RateWidget(),
+              ],
+            ),
+          ),
           const Gap(17),
         ],
       ),

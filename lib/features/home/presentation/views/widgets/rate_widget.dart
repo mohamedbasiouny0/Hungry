@@ -11,7 +11,6 @@ class RateWidget extends StatelessWidget {
     return Row(
       mainAxisSize: .min,
       children: [
-        const Gap(10),
         const Icon(CupertinoIcons.star_fill, color: AppColors.starRateColor),
         const Gap(5),
         Text('4.9', style: AppStyles.robtoMedium16),
