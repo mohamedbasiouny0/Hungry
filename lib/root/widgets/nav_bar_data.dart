@@ -14,7 +14,7 @@ class NavBarData extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Icon(
-          model.icon,
+          isSelected ? model.selectedIcon : model.unselectedIcon,
           color: isSelected ? Colors.black : Colors.black.withAlpha(154),
           size: 24,
         ),

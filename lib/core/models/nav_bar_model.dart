@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
 class NavBarModel {
-  final IconData icon;
+  final IconData unselectedIcon;
+  final IconData selectedIcon;
   final String label;
 
- const NavBarModel({required this.icon, required this.label});
+  const NavBarModel({required this.unselectedIcon, required this.label, required this.selectedIcon});
 }
