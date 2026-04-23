@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/app_styles.dart';
 
-class CustomSlider extends StatefulWidget {
-  const CustomSlider({super.key});
+class SpicySlider extends StatefulWidget {
+  const SpicySlider({super.key});
 
   @override
-  State<CustomSlider> createState() => _CustomSliderState();
+  State<SpicySlider> createState() => _SpicySliderState();
 }
 
-class _CustomSliderState extends State<CustomSlider> {
+class _SpicySliderState extends State<SpicySlider> {
   double value = 0.5;
 
   @override

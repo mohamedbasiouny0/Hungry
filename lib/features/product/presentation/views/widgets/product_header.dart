@@ -17,7 +17,7 @@ class ProductHeader extends StatelessWidget {
             const Spacer(),
             const Column(
               crossAxisAlignment: .start,
-              children: [CustomProductText(), Gap(20), CustomSlider()],
+              children: [CustomProductText(), Gap(20), SpicySlider()],
             ),
             const Gap(20),
           ],
