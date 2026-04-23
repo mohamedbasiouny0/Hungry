@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:test2/core/constant/app_styles.dart';
-import 'package:test2/features/product/presentation/views/product_view.dart';
 import 'package:test2/features/product/presentation/views/widgets/side_options_item.dart';
 
 class SideOptionsSection extends StatelessWidget {
