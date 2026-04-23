@@ -74,7 +74,7 @@ class _LoginViewState extends State<LoginView> {
                         text: 'Login',
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            context.go(RoutingHelper.home);
+                            context.go(RoutingHelper.root);
                           }
                         },
                         backgroundColor: Colors.white,

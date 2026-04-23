@@ -4,6 +4,7 @@ import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/authentication/presentation/views/login_view.dart';
 import 'package:test2/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:test2/features/home/presentation/views/home_view.dart';
+import 'package:test2/root/root.dart';
 import 'package:test2/splash.dart';
 
 // ignore: unused_element
@@ -26,6 +27,11 @@ final GoRouter router = GoRouter(
       path: RoutingHelper.signUp,
       builder: (BuildContext context, GoRouterState state) =>
           const SignUpView(),
+    ),
+    GoRoute(
+      path: RoutingHelper.root,
+      builder: (BuildContext context, GoRouterState state) =>
+          const Root(),
     ),
   ],
 );

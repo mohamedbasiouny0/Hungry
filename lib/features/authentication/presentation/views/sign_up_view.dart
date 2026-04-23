@@ -24,101 +24,128 @@ class _SignUpViewState extends State<SignUpView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          margin: .symmetric(horizontal: 16.r),
-          padding: .symmetric(horizontal: 16.r),
-          decoration: BoxDecoration(
-            color: AppColors.primaryColor,
-            // ignore: prefer_const_constructors
-            borderRadius: .all(.circular(20).r),
-          ),
-          child: Form(
-            key: formKey,
-            child: Column(
-              mainAxisSize: .min,
-              children: [
-                const Gap(50),
-                SvgPicture.asset(
-                  Assets.imagesHungryLogo,
-                  width: 258.w,
-                  height: 40.h,
-                ),
-                const Gap(50),
-                CustomTextFormField(
-                  hintText: 'Enter Your Email',
-                  validator: (value) => emailValidation(value),
-                  visiable: false,
-                ),
-                const Gap(16),
-                CustomTextFormField(
-                  suffixIcon: GestureDetector(
-                    onTap: () {
-                      visable = !visable;
-                      setState(() {});
-                    },
-                    child: Icon(
-                      visable ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
-                    ),
-                  ),
-                  hintText: 'Enter Your Password',
-                  validator: (value) {
-                    return passwordValidation(value);
-                  },
-                  visiable: visable,
-                ),
-                const Gap(16),
-                CustomTextFormField(
-                  suffixIcon: GestureDetector(
-                    onTap: () {
-                      visable = !visable;
-                      setState(() {});
-                    },
-                    child: Icon(
-                      visable ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
-                    ),
-                  ),
-                  hintText: 'Confirm Password',
-                  validator: (value) {
-                    return confirmPasswordValidation(value);
-                  },
-                  visiable: visable,
-                ),
-                const Gap(50),
-                Row(
+      body: SafeArea(
+        child: Center(
+          child: Container(
+            margin: .symmetric(horizontal: 16.r),
+            padding: .symmetric(horizontal: 16.r),
+            decoration: BoxDecoration(
+              color: AppColors.primaryColor,
+              // ignore: prefer_const_constructors
+              borderRadius: .all(.circular(20).r),
+            ),
+            child: Form(
+              key: formKey,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: .min,
                   children: [
-                    Expanded(
-                      child: CustomElevatedButton(
-                        text: 'Sign Up',
-                        onPressed: () {
-                          if (formKey.currentState!.validate()) {
-                            context.go(RoutingHelper.home);
-                          }
-                        },
-                        backgroundColor: Colors.white,
-                        foregroundColor: AppColors.primaryColor,
-                        side: const BorderSide(color: Colors.white, width: 3),
-                      ),
+                    const Gap(50),
+                    SvgPicture.asset(
+                      Assets.imagesHungryLogo,
+                      width: 258.w,
+                      height: 40.h,
+                    ),
+                    const Gap(50),
+                    CustomTextFormField(
+                      hintText: 'Name',
+                      validator: (value) => nameValidation(value),
+                      visiable: false,
                     ),
                     const Gap(16),
-                    Expanded(
-                      child: CustomElevatedButton(
-                        text: 'Login',
-                        onPressed: () {
-                          context.pop();
-                        },
-                        side: const BorderSide(color: Colors.white, width: 3),
-                      ),
+                    CustomTextFormField(
+                      hintText: 'Email Address',
+                      validator: (value) => emailValidation(value),
+                      visiable: false,
                     ),
+                    const Gap(16),
+                    CustomTextFormField(
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          visable = !visable;
+                          setState(() {});
+                        },
+                        child: Icon(
+                          visable
+                              ? CupertinoIcons.eye_slash
+                              : CupertinoIcons.eye,
+                        ),
+                      ),
+                      hintText: 'Password',
+                      validator: (value) {
+                        return passwordValidation(value);
+                      },
+                      visiable: visable,
+                    ),
+                    const Gap(16),
+                    CustomTextFormField(
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          visable = !visable;
+                          setState(() {});
+                        },
+                        child: Icon(
+                          visable
+                              ? CupertinoIcons.eye_slash
+                              : CupertinoIcons.eye,
+                        ),
+                      ),
+                      hintText: 'Confirm Password',
+                      validator: (value) {
+                        return confirmPasswordValidation(value);
+                      },
+                      visiable: visable,
+                    ),
+                    const Gap(50),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: CustomElevatedButton(
+                            text: 'Sign Up',
+                            onPressed: () {
+                              if (formKey.currentState!.validate()) {
+                                context.go(RoutingHelper.root);
+                              }
+                            },
+                            backgroundColor: Colors.white,
+                            foregroundColor: AppColors.primaryColor,
+                            side: const BorderSide(
+                              color: Colors.white,
+                              width: 3,
+                            ),
+                          ),
+                        ),
+                        const Gap(16),
+                        Expanded(
+                          child: CustomElevatedButton(
+                            text: 'Login',
+                            onPressed: () {
+                              context.pop();
+                            },
+                            side: const BorderSide(
+                              color: Colors.white,
+                              width: 3,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Gap(50),
                   ],
                 ),
-                const Gap(50),
-              ],
+              ),
             ),
           ),
         ),
       ),
     );
+  }
+
+  String? nameValidation(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Name is required';
+    }
+    return null;
   }
 
   String? passwordValidation(String? value) {
