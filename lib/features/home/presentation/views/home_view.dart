@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:test2/features/home/presentation/views/widgets/custom_search_field.dart';
+import 'package:test2/features/home/presentation/views/widgets/food_item.dart';
 import 'package:test2/features/home/presentation/views/widgets/home_app_bar.dart';
 import 'package:test2/features/home/presentation/views/widgets/home_category_list.dart';
 
@@ -17,6 +18,8 @@ class HomeView extends StatelessWidget {
           SliverToBoxAdapter(child: CustomSearchField()),
           SliverGap(40),
           SliverToBoxAdapter(child: HomeCategoryList()),
+          SliverGap(40),
+          SliverToBoxAdapter(child: FoodItem()),
         ],
       ),
     );

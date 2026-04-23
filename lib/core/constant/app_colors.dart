@@ -8,4 +8,5 @@ class AppColors {
   static const Color softGreyColor = Color(0xff808080);
   static const Color extraSoftGreyColor = Color(0xffBCBBBB);
   static const Color unSelectedHomeCategoryItemColor = Color(0xffF3F4F6);
+  static const Color starRateColor = Color(0xffFF9633);
 }

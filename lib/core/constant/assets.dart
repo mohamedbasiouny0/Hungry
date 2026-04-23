@@ -4,8 +4,16 @@ class Assets {
   
   static const String imagesAvatar = "assets/images/avatar.png";
 
+  static const String imagesEllipse = "assets/images/Ellipse.png";
+
   static const String imagesHungryLogo = "assets/images/Hungry_logo.svg";
 
+  static const String imagesPngwing12 = "assets/images/pngwing_12.png";
+
   static const String imagesTestImage = "assets/images/test_image.png";
+
+  static const String imagesTestImage2 = "assets/images/testImage2.svg";
+
+  static const String imagesTestImage3 = "assets/images/testImage3.png";
 }
 
