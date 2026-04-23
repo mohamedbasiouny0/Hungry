@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/home/presentation/views/widgets/food_item.dart';
 
 class FoodItemsGridView extends StatelessWidget {
@@ -15,7 +17,10 @@ class FoodItemsGridView extends StatelessWidget {
       ),
       itemCount: 6,
       itemBuilder: (BuildContext context, int index) {
-        return const FoodItem();
+        return GestureDetector(
+          onTap: () => context.push(RoutingHelper.product),
+          child: const FoodItem(),
+        );
       },
     );
   }

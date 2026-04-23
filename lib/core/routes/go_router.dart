@@ -4,6 +4,7 @@ import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/authentication/presentation/views/login_view.dart';
 import 'package:test2/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:test2/features/home/presentation/views/home_view.dart';
+import 'package:test2/features/product/presentation/views/productView.dart';
 import 'package:test2/root/root.dart';
 import 'package:test2/splash.dart';
 
@@ -30,8 +31,12 @@ final GoRouter router = GoRouter(
     ),
     GoRoute(
       path: RoutingHelper.root,
+      builder: (BuildContext context, GoRouterState state) => const Root(),
+    ),
+    GoRoute(
+      path: RoutingHelper.product,
       builder: (BuildContext context, GoRouterState state) =>
-          const Root(),
+          const Productview(),
     ),
   ],
 );
