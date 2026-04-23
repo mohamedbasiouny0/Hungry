@@ -20,7 +20,7 @@ class HomeView extends StatelessWidget {
           SliverToBoxAdapter(child: HomeCategoryList()),
           SliverGap(40),
           SliverPadding(
-            padding: .only(left: 20, right: 20),
+            padding: .only(left: 20, right: 20, bottom: 93),
             sliver: FoodItemsGridView(),
           ),
         ],
