@@ -16,9 +16,9 @@ class Root extends StatefulWidget {
 }
 
 class _RootState extends State<Root> {
+  late PageController controller;
   int currentIndex = 0;
-
-  List<Widget> content = [
+  List<Widget> screens = [
     const HomeView(),
     const CartView(),
     const OrderHistoryView(),
@@ -31,13 +31,23 @@ class _RootState extends State<Root> {
     const NavBarModel(icon: Icons.receipt_long, label: 'Order history'),
     const NavBarModel(icon: CupertinoIcons.profile_circled, label: 'Profile'),
   ];
+  @override
+  void initState() {
+    controller = PageController();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          content[currentIndex],
+          PageView(
+            controller: controller,
+            physics: const NeverScrollableScrollPhysics(),
+            children: screens,
+          ),
+
           Positioned(
             bottom: 25,
             left: 20,
@@ -45,7 +55,7 @@ class _RootState extends State<Root> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(40),
               child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
+                filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
                 child: Container(
                   height: 70,
                   padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -61,12 +71,16 @@ class _RootState extends State<Root> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: List.generate(icons.length, (index) {
                       final isSelected = currentIndex == index;
-
                       return GestureDetector(
                         onTap: () {
                           setState(() {
                             currentIndex = index;
                           });
+                          controller.animateToPage(
+                            index,
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
                         },
                         child: AnimatedContainer(
                           height: 50,
