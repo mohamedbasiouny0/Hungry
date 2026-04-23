@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test2/core/constant/app_colors.dart';
+import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/core/constant/assets.dart';
 import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/authentication/presentation/views/widgets/custom_elevated_button.dart';
@@ -43,6 +44,13 @@ class _LoginViewState extends State<LoginView> {
                     Assets.imagesHungryLogo,
                     width: 258.w,
                     height: 40.h,
+                  ),
+                  const Gap(5),
+                  Text(
+                    'Take it easy, take it combo',
+                    style: AppStyles.robtoSemiBold14.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
                   const Gap(50),
                   CustomTextFormField(
