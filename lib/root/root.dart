@@ -26,10 +26,26 @@ class _RootState extends State<Root> {
   ];
 
   final List<NavBarModel> icons = [
-    const NavBarModel(icon: CupertinoIcons.home, label: 'Home'),
-    const NavBarModel(icon: CupertinoIcons.cart, label: 'Cart'),
-    const NavBarModel(icon: Icons.receipt_long, label: 'Order history'),
-    const NavBarModel(icon: CupertinoIcons.profile_circled, label: 'Profile'),
+    const NavBarModel(
+      unselectedIcon: Icons.home_outlined,
+      label: 'Home',
+      selectedIcon: Icons.home,
+    ),
+    const NavBarModel(
+      unselectedIcon: Icons.shopping_cart_outlined,
+      label: 'Cart',
+      selectedIcon: Icons.shopping_cart,
+    ),
+    const NavBarModel(
+      unselectedIcon: Icons.receipt_long_outlined,
+      label: 'Order history',
+      selectedIcon: Icons.receipt_long,
+    ),
+    const NavBarModel(
+      unselectedIcon: Icons.person_outline,
+      label: 'Profile',
+      selectedIcon: Icons.person,
+    ),
   ];
   @override
   void initState() {

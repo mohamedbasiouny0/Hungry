@@ -28,7 +28,7 @@ class _SplashViewState extends State<SplashView>
 
     Future.delayed(
       const Duration(milliseconds: 2500),
-      () => context.go(RoutingHelper.login),
+      () => context.go(RoutingHelper.root),
     );
 
     controller = AnimationController(
