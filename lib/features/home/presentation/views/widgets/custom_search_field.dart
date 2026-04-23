@@ -9,32 +9,29 @@ class CustomSearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsetsGeometry.symmetric(horizontal: 20),
-      child: Material(
-        elevation: 7,
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20).w,
-        child: TextField(
-          cursorColor: AppColors.primaryFontColor,
-          cursorHeight: 20.h,
-          style: AppStyles.robtoMedium18,
-          decoration: InputDecoration(
-            prefixIcon: const Icon(
-              CupertinoIcons.search,
-              color: AppColors.softGreyColor,
-              fontWeight: .bold,
-            ),
-            hintText: 'Search',
-            hintStyle: AppStyles.robtoMedium18.copyWith(
-              color: AppColors.softGreyColor,
-            ),
-            fillColor: Colors.white,
-            filled: true,
-            border: _border(),
-            enabledBorder: _border(),
-            focusedBorder: _border(),
+    return Material(
+      elevation: 3,
+      color: Colors.white,
+      borderRadius: BorderRadius.circular(20).w,
+      child: TextField(
+        cursorColor: AppColors.primaryFontColor,
+        cursorHeight: 20.h,
+        style: AppStyles.robtoMedium18,
+        decoration: InputDecoration(
+          prefixIcon: const Icon(
+            CupertinoIcons.search,
+            color: AppColors.softGreyColor,
+            fontWeight: .bold,
           ),
+          hintText: 'Search',
+          hintStyle: AppStyles.robtoMedium18.copyWith(
+            color: AppColors.softGreyColor,
+          ),
+          fillColor: Colors.white,
+          filled: true,
+          border: _border(),
+          enabledBorder: _border(),
+          focusedBorder: _border(),
         ),
       ),
     );
