@@ -4,7 +4,7 @@ import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/authentication/presentation/views/login_view.dart';
 import 'package:test2/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:test2/features/home/presentation/views/home_view.dart';
-import 'package:test2/features/product/presentation/views/productView.dart';
+import 'package:test2/features/product/presentation/views/product_view.dart';
 import 'package:test2/root/root.dart';
 import 'package:test2/splash.dart';
 
