@@ -10,7 +10,7 @@ class NavBarOuterShape extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(40),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+        filter: ImageFilter.blur(sigmaX: 30, sigmaY: 30),
         child: Container(
           height: 70,
           padding: const EdgeInsets.symmetric(horizontal: 10),
