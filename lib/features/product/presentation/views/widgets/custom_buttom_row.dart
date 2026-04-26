@@ -4,8 +4,13 @@ import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/features/authentication/presentation/views/widgets/custom_elevated_button.dart';
 
 class CustomButtomRow extends StatelessWidget {
-  const CustomButtomRow({super.key, required this.text});
+  const CustomButtomRow({
+    super.key,
+    required this.text,
+    required this.onPressed,
+  });
   final String text;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -28,7 +33,7 @@ class CustomButtomRow extends StatelessWidget {
           ],
         ),
         const Spacer(),
-        CustomElevatedButton(text: text, onPressed: () {}),
+        CustomElevatedButton(text: text, onPressed: onPressed),
       ],
     );
   }

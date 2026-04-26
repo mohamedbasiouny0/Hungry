@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:test2/core/models/nav_bar_model.dart';
 import 'package:test2/root/widgets/nav_bar_data.dart';
