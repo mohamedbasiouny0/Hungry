@@ -25,7 +25,7 @@ class _CartViewState extends State<CartView> {
         toolbarHeight: 100,
         title: Container(
           padding: const .symmetric(horizontal: 8),
-          child: CustomButtomRow(text: 'Checkout', onPressed: () {}),
+          child: CustomRow(text: 'Checkout', onPressed: () {}),
         ),
         elevation: 0,
         scrolledUnderElevation: 4,

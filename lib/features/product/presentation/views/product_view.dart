@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -20,29 +19,25 @@ class _ProductviewState extends State<Productview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () => context.pop(),
-          icon: const Icon(CupertinoIcons.back),
+        title: CustomRow(
+          text: 'Add to cart',
+          onPressed: () => context.go(RoutingHelper.cart),
         ),
+        toolbarHeight: 100,
+        backgroundColor: Colors.white,
       ),
-      body: Column(
-        crossAxisAlignment: .start,
-        children: [
-          const ProductHeader(),
-          const Gap(50),
-          const ToppingsSection(),
-          const Gap(50),
-          const SideOptionsSection(),
-          const Gap(65),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: CustomButtomRow(
-              text: 'Add to card',
-              onPressed: () => context.push(RoutingHelper.cart),
-            ),
-          ),
-        ],
+      body: const SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: .start,
+          children: [
+            ProductHeader(),
+            Gap(50),
+            ToppingsSection(),
+            Gap(50),
+            SideOptionsSection(),
+            Gap(65),
+          ],
+        ),
       ),
     );
   }
