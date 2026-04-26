@@ -1,10 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:go_router/go_router.dart';
-import 'package:test2/core/constant/app_colors.dart';
-import 'package:test2/core/constant/app_styles.dart';
-import 'package:test2/features/authentication/presentation/views/widgets/custom_elevated_button.dart';
 import 'package:test2/features/product/presentation/views/widgets/custom_buttom_row.dart';
 import 'package:test2/features/product/presentation/views/widgets/product_header.dart';
 import 'package:test2/features/product/presentation/views/widgets/side_options_section.dart';
@@ -22,26 +17,22 @@ class _ProductviewState extends State<Productview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const CustomRow(text: 'Add to card'),
+        toolbarHeight: 100,
         backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () => context.pop(),
-          icon: const Icon(CupertinoIcons.back),
-        ),
       ),
-      body: const Column(
-        crossAxisAlignment: .start,
-        children: [
-          ProductHeader(),
-          Gap(50),
-          ToppingsSection(),
-          Gap(50),
-          SideOptionsSection(),
-          Gap(65),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: CustomButtomRow(text: 'Add to card'),
-          ),
-        ],
+      body: const SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: .start,
+          children: [
+            ProductHeader(),
+            Gap(50),
+            ToppingsSection(),
+            Gap(50),
+            SideOptionsSection(),
+            Gap(65),
+          ],
+        ),
       ),
     );
   }

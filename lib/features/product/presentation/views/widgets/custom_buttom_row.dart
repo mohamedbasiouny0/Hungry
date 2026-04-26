@@ -3,8 +3,8 @@ import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/features/authentication/presentation/views/widgets/custom_elevated_button.dart';
 
-class CustomButtomRow extends StatelessWidget {
-  const CustomButtomRow({super.key, required this.text});
+class CustomRow extends StatelessWidget {
+  const CustomRow({super.key, required this.text});
   final String text;
   @override
   Widget build(BuildContext context) {
