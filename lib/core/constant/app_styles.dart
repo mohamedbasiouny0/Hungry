@@ -24,6 +24,11 @@ class AppStyles {
     fontSize: 16.sp,
     color: AppColors.hardGreyColor,
   );
+  static final TextStyle interMedium18 = GoogleFonts.inter(
+    fontWeight: .w500,
+    fontSize: 18.sp,
+    color: AppColors.primaryFontColor,
+  );
   static final TextStyle interSemiBold18 = GoogleFonts.inter(
     fontWeight: .w600,
     fontSize: 18.sp,

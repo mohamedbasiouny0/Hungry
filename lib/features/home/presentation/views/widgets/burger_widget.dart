@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:test2/core/constant/assets.dart';
 
-class BurgerWidget extends StatelessWidget {
-  const BurgerWidget({super.key});
+class BurgerImageWidget extends StatelessWidget {
+  const BurgerImageWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

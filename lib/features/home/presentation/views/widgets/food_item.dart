@@ -14,7 +14,7 @@ class FoodItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: .start,
         children: [
-          const Center(child: BurgerWidget()),
+          const Center(child: BurgerImageWidget()),
           const Gap(10),
           Padding(
             padding: const .only(left: 10),
