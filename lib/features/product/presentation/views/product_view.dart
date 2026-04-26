@@ -39,7 +39,7 @@ class _ProductviewState extends State<Productview> {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: CustomButtomRow(
               text: 'Add to card',
-              onPressed: () => context.push(RoutingHelper.root),
+              onPressed: () => context.push(RoutingHelper.cart),
             ),
           ),
         ],
