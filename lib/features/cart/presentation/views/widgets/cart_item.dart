@@ -11,6 +11,7 @@ class CartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Colors.white,
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Row(
@@ -24,10 +25,10 @@ class CartItem extends StatelessWidget {
               ],
             ),
             const Spacer(),
-            const Column(
+            Column(
               mainAxisSize: .min,
               children: [
-                Row(
+                const Row(
                   mainAxisSize: .min,
                   children: [
                     PlusOrMinusElevatedButton(isPlus: true),
@@ -35,8 +36,10 @@ class CartItem extends StatelessWidget {
                     PlusOrMinusElevatedButton(isPlus: false),
                   ],
                 ),
-                Gap(40),
-                RemoveElevatedButton(),
+                const Gap(15),
+                Text('2', style: AppStyles.interMedium18),
+                const Gap(15),
+                const RemoveElevatedButton(),
               ],
             ),
           ],
