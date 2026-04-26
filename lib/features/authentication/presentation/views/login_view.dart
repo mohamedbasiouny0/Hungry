@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test2/core/constant/app_colors.dart';
+import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/core/constant/assets.dart';
 import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/authentication/presentation/views/widgets/custom_elevated_button.dart';
@@ -34,68 +35,77 @@ class _LoginViewState extends State<LoginView> {
           ),
           child: Form(
             key: formKey,
-            child: Column(
-              mainAxisSize: .min,
-              children: [
-                const Gap(50),
-                SvgPicture.asset(
-                  Assets.imagesHungryLogo,
-                  width: 258.w,
-                  height: 40.h,
-                ),
-                const Gap(50),
-                CustomTextFormField(
-                  hintText: 'Enter Your Email',
-                  validator: (value) => emailValidation(value),
-                  visiable: false,
-                ),
-                const Gap(16),
-                CustomTextFormField(
-                  suffixIcon: GestureDetector(
-                    onTap: () {
-                      visable = !visable;
-                      setState(() {});
-                    },
-                    child: Icon(
-                      visable ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: .min,
+                children: [
+                  const Gap(50),
+                  SvgPicture.asset(
+                    Assets.imagesHungryLogo,
+                    width: 258.w,
+                    height: 40.h,
+                  ),
+                  const Gap(5),
+                  Text(
+                    'Take it easy, take it combo',
+                    style: AppStyles.robtoSemiBold14.copyWith(
+                      color: Colors.white,
                     ),
                   ),
-                  hintText: 'Enter Your Password',
-                  validator: (value) {
-                    return passwordValidation(value);
-                  },
-                  visiable: visable,
-                ),
-                const Gap(50),
-                Row(
-                  children: [
-                    Expanded(
-                      child: CustomElevatedButton(
-                        text: 'Login',
-                        onPressed: () {
-                          if (formKey.currentState!.validate()) {
-                            context.go(RoutingHelper.root);
-                          }
-                        },
-                        backgroundColor: Colors.white,
-                        foregroundColor: AppColors.primaryColor,
-                        side: const BorderSide(color: Colors.white, width: 3),
+                  const Gap(50),
+                  CustomTextFormField(
+                    hintText: 'Enter Your Email',
+                    validator: (value) => emailValidation(value),
+                    visiable: false,
+                  ),
+                  const Gap(16),
+                  CustomTextFormField(
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        visable = !visable;
+                        setState(() {});
+                      },
+                      child: Icon(
+                        visable ? CupertinoIcons.eye_slash : CupertinoIcons.eye,
                       ),
                     ),
-                    const Gap(16),
-                    Expanded(
-                      child: CustomElevatedButton(
-                        text: 'SignUp',
-                        onPressed: () {
-                          context.push(RoutingHelper.signUp);
-                        },
-                        side: const BorderSide(color: Colors.white, width: 3),
+                    hintText: 'Enter Your Password',
+                    validator: (value) {
+                      return passwordValidation(value);
+                    },
+                    visiable: visable,
+                  ),
+                  const Gap(50),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: CustomElevatedButton(
+                          text: 'Login',
+                          onPressed: () {
+                            if (formKey.currentState!.validate()) {
+                              context.go(RoutingHelper.root);
+                            }
+                          },
+                          backgroundColor: Colors.white,
+                          foregroundColor: AppColors.primaryColor,
+                          side: const BorderSide(color: Colors.white, width: 3),
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-                const Gap(50),
-              ],
+                      const Gap(16),
+                      Expanded(
+                        child: CustomElevatedButton(
+                          text: 'SignUp',
+                          onPressed: () {
+                            context.push(RoutingHelper.signUp);
+                          },
+                          side: const BorderSide(color: Colors.white, width: 3),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Gap(50),
+                ],
+              ),
             ),
           ),
         ),
