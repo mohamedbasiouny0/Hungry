@@ -3,12 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:test2/core/constant/app_colors.dart';
 
 class PlusOrMinusElevatedButton extends StatelessWidget {
-  const PlusOrMinusElevatedButton({super.key, required this.isPlus});
+  const PlusOrMinusElevatedButton({
+    super.key,
+    required this.isPlus,
+    required this.onPressed,
+  });
   final bool isPlus;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(borderRadius: .circular(10)),
         foregroundColor: Colors.white,

@@ -6,8 +6,15 @@ import 'package:test2/features/cart/presentation/views/widgets/remove_elevated_b
 import 'package:test2/features/home/presentation/views/widgets/burger_widget.dart';
 
 class CartItem extends StatelessWidget {
-  const CartItem({super.key});
-
+  const CartItem({
+    super.key,
+    required this.itemNumber,
+    required this.plusOnPressed,
+    required this.minusOnPressed,
+  });
+  final int itemNumber;
+  final VoidCallback plusOnPressed;
+  final VoidCallback minusOnPressed;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -28,16 +35,22 @@ class CartItem extends StatelessWidget {
             Column(
               mainAxisSize: .min,
               children: [
-                const Row(
+                Row(
                   mainAxisSize: .min,
                   children: [
-                    PlusOrMinusElevatedButton(isPlus: true),
-                    Gap(25),
-                    PlusOrMinusElevatedButton(isPlus: false),
+                    PlusOrMinusElevatedButton(
+                      isPlus: true,
+                      onPressed: plusOnPressed,
+                    ),
+                    const Gap(25),
+                    PlusOrMinusElevatedButton(
+                      isPlus: false,
+                      onPressed: minusOnPressed,
+                    ),
                   ],
                 ),
                 const Gap(15),
-                Text('2', style: AppStyles.interMedium18),
+                Text(itemNumber.toString(), style: AppStyles.interMedium18),
                 const Gap(15),
                 const RemoveElevatedButton(),
               ],
