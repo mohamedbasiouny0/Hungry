@@ -6,4 +6,5 @@ class RoutingHelper {
   static const String home = '/homeView';
   static const String product = '/productView';
   static const String cart = '/cartView';
+  static const String checkout = '/checkoutView';
 }

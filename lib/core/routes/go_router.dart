@@ -4,6 +4,7 @@ import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/authentication/presentation/views/login_view.dart';
 import 'package:test2/features/authentication/presentation/views/sign_up_view.dart';
 import 'package:test2/features/cart/presentation/views/cart_view.dart';
+import 'package:test2/features/checkout/presentation/views/checkout_view.dart';
 import 'package:test2/features/home/presentation/views/home_view.dart';
 import 'package:test2/features/product/presentation/views/product_view.dart';
 import 'package:test2/root/root.dart';
@@ -42,6 +43,11 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: RoutingHelper.cart,
       builder: (BuildContext context, GoRouterState state) => const CartView(),
+    ),
+    GoRoute(
+      path: RoutingHelper.checkout,
+      builder: (BuildContext context, GoRouterState state) =>
+          const CheckoutView(),
     ),
   ],
 );
