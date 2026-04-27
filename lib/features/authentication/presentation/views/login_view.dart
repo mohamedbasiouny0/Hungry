@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/app_styles.dart';
@@ -31,7 +30,7 @@ class _LoginViewState extends State<LoginView> {
           decoration: BoxDecoration(
             color: AppColors.primaryColor,
             // ignore: prefer_const_constructors
-            borderRadius: .all(.circular(20).r),
+            borderRadius: .all(.circular(20.r)),
           ),
           child: Form(
             key: formKey,
@@ -39,26 +38,26 @@ class _LoginViewState extends State<LoginView> {
               child: Column(
                 mainAxisSize: .min,
                 children: [
-                  const Gap(50),
+                  50.verticalSpace,
                   SvgPicture.asset(
                     Assets.imagesHungryLogo,
                     width: 258.w,
                     height: 40.h,
                   ),
-                  const Gap(5),
+                  5.verticalSpace,
                   Text(
                     'Take it easy, take it combo',
                     style: AppStyles.robtoSemiBold14.copyWith(
                       color: Colors.white,
                     ),
                   ),
-                  const Gap(50),
+                  50.verticalSpace,
                   CustomTextFormField(
                     hintText: 'Enter Your Email',
                     validator: (value) => emailValidation(value),
                     visiable: false,
                   ),
-                  const Gap(16),
+                  16.verticalSpace,
                   CustomTextFormField(
                     suffixIcon: GestureDetector(
                       onTap: () {
@@ -75,7 +74,7 @@ class _LoginViewState extends State<LoginView> {
                     },
                     visiable: visable,
                   ),
-                  const Gap(50),
+                  50.verticalSpace,
                   Row(
                     children: [
                       Expanded(
@@ -91,7 +90,7 @@ class _LoginViewState extends State<LoginView> {
                           side: const BorderSide(color: Colors.white, width: 3),
                         ),
                       ),
-                      const Gap(16),
+                      16.horizontalSpace,
                       Expanded(
                         child: CustomElevatedButton(
                           text: 'SignUp',
@@ -103,7 +102,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ],
                   ),
-                  const Gap(50),
+                  50.verticalSpace,
                 ],
               ),
             ),

@@ -20,7 +20,7 @@ class CustomTextFormField extends StatelessWidget {
   OutlineInputBorder _errorBorder() {
     return OutlineInputBorder(
       // ignore: prefer_const_constructors
-      borderRadius: .all(.circular(12)).w,
+      borderRadius: .all(.circular(12.r)),
       borderSide: const BorderSide(color: Colors.red),
     );
   }
@@ -28,7 +28,7 @@ class CustomTextFormField extends StatelessWidget {
   OutlineInputBorder _border() {
     return OutlineInputBorder(
       // ignore: prefer_const_constructors
-      borderRadius: .all(.circular(12)).w,
+      borderRadius: .all(.circular(12.r)),
       borderSide: const BorderSide(color: Colors.transparent),
     );
   }
