@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/product/presentation/views/widgets/custom_buttom_row.dart';
@@ -23,19 +23,19 @@ class _ProductviewState extends State<Productview> {
           text: 'Add to cart',
           onPressed: () => context.push(RoutingHelper.cart),
         ),
-        toolbarHeight: 100,
+        toolbarHeight: 100.h,
         backgroundColor: Colors.white,
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: .start,
           children: [
-            ProductHeader(),
-            Gap(50),
-            ToppingsSection(),
-            Gap(50),
-            SideOptionsSection(),
-            Gap(65),
+            const ProductHeader(),
+            50.verticalSpace,
+            const ToppingsSection(),
+            50.verticalSpace,
+            const SideOptionsSection(),
+            50.verticalSpace,
           ],
         ),
       ),

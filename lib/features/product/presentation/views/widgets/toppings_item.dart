@@ -16,7 +16,7 @@ class ToppingsItem extends StatelessWidget {
           height: 120.h,
           decoration: BoxDecoration(
             color: AppColors.primaryFontColor,
-            borderRadius: .circular(15),
+            borderRadius: .circular(15.r),
             boxShadow: const [BoxShadow(blurRadius: 10, spreadRadius: -5)],
           ),
         ),
@@ -27,15 +27,15 @@ class ToppingsItem extends StatelessWidget {
             height: 61.h,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: .circular(15),
+              borderRadius: .circular(15.r),
             ),
             child: Image.asset(Assets.images5eyar),
           ),
         ),
         Positioned(
-          top: 70,
-          left: 6,
-          right: 6,
+          top: 70.h,
+          left: 6.w,
+          right: 6.w,
           child: Row(
             children: [
               Text(

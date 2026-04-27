@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:gap/gap.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/core/constant/assets.dart';
 import 'package:test2/features/product/presentation/views/widgets/custom_product_text.dart';
 import 'package:test2/features/product/presentation/views/widgets/custom_slider.dart';
@@ -15,11 +15,15 @@ class ProductHeader extends StatelessWidget {
           children: [
             Image.asset(Assets.imagesPngwing12, height: 297),
             const Spacer(),
-            const Column(
+            Column(
               crossAxisAlignment: .start,
-              children: [CustomProductText(), Gap(20), SpicySlider()],
+              children: [
+                const CustomProductText(),
+                20.verticalSpace,
+                const SpicySlider(),
+              ],
             ),
-            const Gap(20),
+            20.horizontalSpace,
           ],
         ),
       ],
