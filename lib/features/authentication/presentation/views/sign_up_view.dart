@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/assets.dart';
@@ -20,19 +19,20 @@ class SignUpView extends StatefulWidget {
 class _SignUpViewState extends State<SignUpView> {
   final GlobalKey<FormState> formKey = GlobalKey();
   String? passwordHolder = '';
-  bool visable = false;
+  bool visablePassword = false;
+  bool visableConfirmPassword = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Center(
           child: Container(
-            margin: .symmetric(horizontal: 16.r),
-            padding: .symmetric(horizontal: 16.r),
+            margin: .symmetric(horizontal: 16.w),
+            padding: .symmetric(horizontal: 16.w),
             decoration: BoxDecoration(
               color: AppColors.primaryColor,
               // ignore: prefer_const_constructors
-              borderRadius: .all(.circular(20).r),
+              borderRadius: .all(.circular(20.r)),
             ),
             child: Form(
               key: formKey,
@@ -40,33 +40,33 @@ class _SignUpViewState extends State<SignUpView> {
                 child: Column(
                   mainAxisSize: .min,
                   children: [
-                    const Gap(50),
+                    50.verticalSpace,
                     SvgPicture.asset(
                       Assets.imagesHungryLogo,
                       width: 258.w,
                       height: 40.h,
                     ),
-                    const Gap(50),
+                    50.verticalSpace,
                     CustomTextFormField(
                       hintText: 'Name',
                       validator: (value) => nameValidation(value),
                       visiable: false,
                     ),
-                    const Gap(16),
+                    16.verticalSpace,
                     CustomTextFormField(
                       hintText: 'Email Address',
                       validator: (value) => emailValidation(value),
                       visiable: false,
                     ),
-                    const Gap(16),
+                    16.verticalSpace,
                     CustomTextFormField(
                       suffixIcon: GestureDetector(
                         onTap: () {
-                          visable = !visable;
+                          visablePassword = !visablePassword;
                           setState(() {});
                         },
                         child: Icon(
-                          visable
+                          visablePassword
                               ? CupertinoIcons.eye_slash
                               : CupertinoIcons.eye,
                         ),
@@ -75,17 +75,17 @@ class _SignUpViewState extends State<SignUpView> {
                       validator: (value) {
                         return passwordValidation(value);
                       },
-                      visiable: visable,
+                      visiable: visablePassword,
                     ),
-                    const Gap(16),
+                    16.verticalSpace,
                     CustomTextFormField(
                       suffixIcon: GestureDetector(
                         onTap: () {
-                          visable = !visable;
+                          visableConfirmPassword = !visableConfirmPassword;
                           setState(() {});
                         },
                         child: Icon(
-                          visable
+                          visableConfirmPassword
                               ? CupertinoIcons.eye_slash
                               : CupertinoIcons.eye,
                         ),
@@ -94,9 +94,9 @@ class _SignUpViewState extends State<SignUpView> {
                       validator: (value) {
                         return confirmPasswordValidation(value);
                       },
-                      visiable: visable,
+                      visiable: visableConfirmPassword,
                     ),
-                    const Gap(50),
+                    50.verticalSpace,
                     Row(
                       children: [
                         Expanded(
@@ -109,28 +109,22 @@ class _SignUpViewState extends State<SignUpView> {
                             },
                             backgroundColor: Colors.white,
                             foregroundColor: AppColors.primaryColor,
-                            side: const BorderSide(
-                              color: Colors.white,
-                              width: 3,
-                            ),
+                            side: BorderSide(color: Colors.white, width: 3.w),
                           ),
                         ),
-                        const Gap(16),
+                        16.horizontalSpace,
                         Expanded(
                           child: CustomElevatedButton(
                             text: 'Login',
                             onPressed: () {
                               context.pop();
                             },
-                            side: const BorderSide(
-                              color: Colors.white,
-                              width: 3,
-                            ),
+                            side: BorderSide(color: Colors.white, width: 3.w),
                           ),
                         ),
                       ],
                     ),
-                    const Gap(50),
+                    50.verticalSpace,
                   ],
                 ),
               ),
