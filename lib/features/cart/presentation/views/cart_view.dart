@@ -29,7 +29,7 @@ class _CartViewState extends State<CartView> {
           padding: const .symmetric(horizontal: 8),
           child: CustomRow(
             text: 'Checkout',
-            onPressed: () => context.go(RoutingHelper.checkout),
+            onPressed: () => context.push(RoutingHelper.checkout),
           ),
         ),
         elevation: 0,

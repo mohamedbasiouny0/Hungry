@@ -21,7 +21,7 @@ class _ProductviewState extends State<Productview> {
       appBar: AppBar(
         title: CustomRow(
           text: 'Add to cart',
-          onPressed: () => context.go(RoutingHelper.cart),
+          onPressed: () => context.push(RoutingHelper.cart),
         ),
         toolbarHeight: 100,
         backgroundColor: Colors.white,
