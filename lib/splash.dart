@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
@@ -62,12 +63,11 @@ class _SplashViewState extends State<SplashView>
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.heightOf(context);
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: Column(
         children: [
-          Gap(height * 0.31),
+          290.horizontalSpace,
           FadeTransition(
             opacity: fadeAnimation,
             child: ScaleTransition(
