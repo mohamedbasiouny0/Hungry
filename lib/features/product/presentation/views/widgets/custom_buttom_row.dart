@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/app_styles.dart';
-import 'package:test2/features/authentication/presentation/views/widgets/custom_elevated_button.dart';
+import 'package:test2/shared/widgets/custom_elevated_button.dart';
 
 class CustomRow extends StatelessWidget {
   const CustomRow({super.key, required this.text, required this.onPressed});

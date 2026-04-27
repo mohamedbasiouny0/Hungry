@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test2/core/constant/app_styles.dart';
-import 'package:test2/features/authentication/presentation/views/widgets/custom_elevated_button.dart';
+import 'package:test2/shared/widgets/custom_elevated_button.dart';
 import 'package:test2/features/checkout/presentation/views/widgets/dialog_checkmark.dart';
 
 class CustomDialog extends StatelessWidget {

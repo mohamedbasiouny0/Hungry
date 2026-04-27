@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:test2/core/constant/app_styles.dart';
-import 'package:test2/features/authentication/presentation/views/widgets/custom_elevated_button.dart';
+import 'package:test2/shared/widgets/custom_elevated_button.dart';
 import 'package:test2/features/home/presentation/views/widgets/burger_widget.dart';
 
 class OrderHistoryItem extends StatelessWidget {
