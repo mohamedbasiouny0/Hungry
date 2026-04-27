@@ -8,15 +8,17 @@ class CustomElevatedButton extends StatelessWidget {
     super.key,
     this.backgroundColor,
     this.foregroundColor,
-    required this.text,
+    this.text,
     this.side,
     this.onPressed,
+    this.child,
   });
   final Color? backgroundColor;
   final Color? foregroundColor;
-  final String text;
+  final String? text;
   final BorderSide? side;
   final VoidCallback? onPressed;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -31,10 +33,12 @@ class CustomElevatedButton extends StatelessWidget {
         backgroundColor: backgroundColor ?? AppColors.primaryColor,
         foregroundColor: foregroundColor ?? Colors.white,
       ),
-      child: Text(
-        text,
-        style: AppStyles.interSemiBold18.copyWith(color: foregroundColor),
-      ),
+      child:
+          child ??
+          Text(
+            text!,
+            style: AppStyles.interSemiBold18.copyWith(color: foregroundColor),
+          ),
     );
   }
 }
