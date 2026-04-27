@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:test2/core/constant/app_styles.dart';
+import 'package:test2/features/checkout/presentation/views/widgets/payment_checkbox.dart';
 import 'package:test2/features/checkout/presentation/views/widgets/payment_options.dart';
 
 class PayemntMethodsSection extends StatefulWidget {
@@ -23,11 +24,7 @@ class _PayemntMethodsSectionState extends State<PayemntMethodsSection> {
         const Gap(20),
         const PaymentOptions(),
         const Gap(17),
-        Checkbox(
-          value: selected,
-          onChanged: (value) => setState(() => selected = value),
-          activeColor: Colors.redAccent,
-        ),
+        const PaymentCheckboxSection(),
       ],
     );
   }
