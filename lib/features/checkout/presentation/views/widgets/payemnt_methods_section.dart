@@ -1,10 +1,18 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/features/checkout/presentation/views/widgets/payment_options.dart';
 
-class PayemntMethodsSection extends StatelessWidget {
+class PayemntMethodsSection extends StatefulWidget {
   const PayemntMethodsSection({super.key});
+
+  @override
+  State<PayemntMethodsSection> createState() => _PayemntMethodsSectionState();
+}
+
+class _PayemntMethodsSectionState extends State<PayemntMethodsSection> {
+  bool? selected;
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +22,12 @@ class PayemntMethodsSection extends StatelessWidget {
         Text('Payment methods', style: AppStyles.popSemiBold20),
         const Gap(20),
         const PaymentOptions(),
+        const Gap(17),
+        Checkbox(
+          value: selected,
+          onChanged: (value) => setState(() => selected = value),
+          activeColor: Colors.redAccent,
+        ),
       ],
     );
   }
