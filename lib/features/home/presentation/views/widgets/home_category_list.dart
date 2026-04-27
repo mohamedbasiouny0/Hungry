@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/features/home/presentation/views/widgets/home_category_item.dart';
 
 class HomeCategoryList extends StatefulWidget {
@@ -14,7 +15,7 @@ class _HomeCategoryListState extends State<HomeCategoryList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50,
+      height: 50.h,
       child: ListView.builder(
         itemCount: categoryTextList.length,
         scrollDirection: .horizontal,

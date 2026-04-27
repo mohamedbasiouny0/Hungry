@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:test2/features/home/presentation/views/widgets/food_items_grid_view.dart';
 import 'package:test2/features/home/presentation/views/widgets/home_app_bar.dart';
@@ -9,16 +10,16 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: CustomScrollView(
         slivers: [
-          HomeAppBar(),
-          SliverGap(25),
-          SliverToBoxAdapter(child: HomeCategoryList()),
-          SliverGap(16),
+          const HomeAppBar(),
+          SliverGap(25.h),
+          const SliverToBoxAdapter(child: HomeCategoryList()),
+          SliverGap(16.h),
           SliverPadding(
-            padding: .only(left: 20, right: 20, bottom: 93),
-            sliver: FoodItemsGridView(),
+            padding: .only(left: 20.w, right: 20.w, bottom: 93.h),
+            sliver: const FoodItemsGridView(),
           ),
         ],
       ),

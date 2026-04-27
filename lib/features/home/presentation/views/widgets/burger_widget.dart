@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/core/constant/assets.dart';
 
 class BurgerImageWidget extends StatelessWidget {
@@ -10,7 +11,7 @@ class BurgerImageWidget extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: [
         Image.asset(Assets.imagesEllipse),
-        Image.asset(Assets.imagesTestImage3, height: 120, width: 120),
+        Image.asset(Assets.imagesTestImage3, height: 120.h, width: 120.w),
       ],
     );
   }

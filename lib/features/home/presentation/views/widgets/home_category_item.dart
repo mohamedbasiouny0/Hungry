@@ -19,11 +19,11 @@ class HomeCategoryItem extends StatelessWidget {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 300),
       curve: Curves.ease,
-      margin: isFirst ? const .symmetric(horizontal: 8) : const .only(right: 8),
+      margin: isFirst ? .symmetric(horizontal: 8.w) : .only(right: 8.w),
       height: 50.h,
-      padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
+      padding: EdgeInsets.symmetric(horizontal: 28.w, vertical: 16.h),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20).w,
+        borderRadius: .circular(20.r),
         color: selected
             ? AppColors.primaryColor
             : AppColors.unSelectedHomeCategoryItemColor,

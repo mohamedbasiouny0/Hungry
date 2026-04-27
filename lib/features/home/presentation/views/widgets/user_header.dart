@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/app_styles.dart';
@@ -18,7 +19,7 @@ class UserHeader extends StatelessWidget {
           children: [
             SvgPicture.asset(
               Assets.imagesHungryLogo,
-              width: 240,
+              width: 240.w,
               colorFilter: const ColorFilter.mode(
                 AppColors.primaryColor,
                 .srcIn,
@@ -28,8 +29,8 @@ class UserHeader extends StatelessWidget {
           ],
         ),
         ClipRRect(
-          borderRadius: .circular(20),
-          child: Image.asset(Assets.imagesAvatar, height: 60, width: 60),
+          borderRadius: .circular(20.r),
+          child: Image.asset(Assets.imagesAvatar, height: 60.h, width: 60.w),
         ),
       ],
     );

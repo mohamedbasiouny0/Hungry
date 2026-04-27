@@ -12,7 +12,7 @@ class CustomSearchField extends StatelessWidget {
     return Material(
       elevation: 3,
       color: Colors.white,
-      borderRadius: BorderRadius.circular(20).w,
+      borderRadius: BorderRadius.circular(20.r),
       child: TextField(
         cursorColor: AppColors.primaryFontColor,
         cursorHeight: 20.h,
@@ -39,7 +39,7 @@ class CustomSearchField extends StatelessWidget {
 
   OutlineInputBorder _border() {
     return OutlineInputBorder(
-      borderRadius: const BorderRadius.all(Radius.circular(20)).w,
+      borderRadius: .all(Radius.circular(20.r)),
       borderSide: const BorderSide(width: 0, color: Colors.transparent),
     );
   }
