@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/cart/presentation/views/widgets/cart_item.dart';
 import 'package:test2/features/product/presentation/views/widgets/custom_buttom_row.dart';
 
@@ -25,7 +27,10 @@ class _CartViewState extends State<CartView> {
         toolbarHeight: 100,
         title: Container(
           padding: const .symmetric(horizontal: 8),
-          child: CustomRow(text: 'Checkout', onPressed: () {}),
+          child: CustomRow(
+            text: 'Checkout',
+            onPressed: () => context.go(RoutingHelper.checkout),
+          ),
         ),
         elevation: 0,
         scrolledUnderElevation: 4,
