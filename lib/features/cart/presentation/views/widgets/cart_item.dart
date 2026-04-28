@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/features/cart/presentation/views/widgets/plus_or_minus_elevated_button.dart';
 import 'package:test2/features/cart/presentation/views/widgets/remove_elevated_button.dart';
@@ -20,7 +20,7 @@ class CartItem extends StatelessWidget {
     return Card(
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding:  EdgeInsets.all(16.r),
         child: Row(
           children: [
             Column(
@@ -42,16 +42,16 @@ class CartItem extends StatelessWidget {
                       isPlus: true,
                       onPressed: plusOnPressed,
                     ),
-                    const Gap(25),
+                    25.horizontalSpace,
                     PlusOrMinusElevatedButton(
                       isPlus: false,
                       onPressed: minusOnPressed,
                     ),
                   ],
                 ),
-                const Gap(15),
+                15.verticalSpace,
                 Text(itemNumber.toString(), style: AppStyles.interMedium18),
-                const Gap(15),
+                15.verticalSpace,
                 const RemoveElevatedButton(),
               ],
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test2/core/routes/routing_helper.dart';
 import 'package:test2/features/cart/presentation/views/widgets/cart_item.dart';
@@ -24,9 +25,9 @@ class _CartViewState extends State<CartView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 100,
+        toolbarHeight: 100.h,
         title: Container(
-          padding: const .symmetric(horizontal: 8),
+          padding: .symmetric(horizontal: 8.w),
           child: CustomRow(
             text: 'Checkout',
             onPressed: () => context.push(RoutingHelper.checkout),
@@ -41,7 +42,7 @@ class _CartViewState extends State<CartView> {
         children: [
           Expanded(
             child: ListView.builder(
-              padding: const .only(bottom: 93),
+              padding: .only(bottom: 93.h),
               itemCount: 5,
               itemBuilder: (BuildContext context, int index) {
                 return CartItem(

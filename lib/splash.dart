@@ -74,9 +74,7 @@ class _SplashViewState extends State<SplashView>
               child: SvgPicture.asset(Assets.imagesHungryLogo),
             ),
           ),
-
           const Spacer(),
-
           SlideTransition(
             position: slideAnimation,
             child: Image.asset(Assets.imagesTestImage),

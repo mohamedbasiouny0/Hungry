@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/core/constant/app_colors.dart';
 
 class PlusOrMinusElevatedButton extends StatelessWidget {
@@ -15,10 +16,10 @@ class PlusOrMinusElevatedButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(borderRadius: .circular(10)),
+        shape: RoundedRectangleBorder(borderRadius: .circular(10.r)),
         foregroundColor: Colors.white,
         backgroundColor: AppColors.primaryColor,
-        fixedSize: const Size.square(20),
+        fixedSize: Size.square(20.r),
         padding: .zero,
       ),
       child: Icon(isPlus ? CupertinoIcons.add : CupertinoIcons.minus),
