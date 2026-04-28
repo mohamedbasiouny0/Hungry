@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/app_styles.dart';
 
@@ -13,7 +14,7 @@ class ProfileTextField extends StatelessWidget {
       controller: controller,
       onTapOutside: (event) => FocusScope.of(context).unfocus(),
       decoration: InputDecoration(
-        contentPadding: const .symmetric(horizontal: 24, vertical: 16),
+        contentPadding: .symmetric(horizontal: 24.w, vertical: 16.h),
         labelText: labelText,
         labelStyle: AppStyles.robtoMedium16.copyWith(
           color: AppColors.primaryColor,
@@ -26,7 +27,7 @@ class ProfileTextField extends StatelessWidget {
 
   OutlineInputBorder _border() {
     return OutlineInputBorder(
-      borderRadius: .circular(16),
+      borderRadius: .circular(16.r),
       borderSide: const BorderSide(color: AppColors.primaryColor, width: 2),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gap/gap.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/assets.dart';
 import 'package:test2/features/profile/presentation/views/widgets/profile_bottom_row_buttons.dart';
@@ -18,18 +17,18 @@ class ProfileView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            Gap(78.h),
+            78.verticalSpace,
             const ProfilePicture(image: Assets.imagesAvatar),
-            Gap(35.h),
+            35.verticalSpace,
             const ProfileTextField(labelText: 'Name'),
-            Gap(25.h),
+            25.verticalSpace,
             const ProfileTextField(labelText: 'Email'),
-            Gap(25.h),
+            25.verticalSpace,
             const ProfileTextField(labelText: 'Delivery Address'),
-            Gap(25.h),
+            25.verticalSpace,
             const ProfileTextField(labelText: 'Password'),
             Divider(
-              height: 72,
+              height: 72.h,
               color: AppColors.mediumGreyColor,
               endIndent: 25.w,
               indent: 25.w,
@@ -37,7 +36,7 @@ class ProfileView extends StatelessWidget {
             const ProfileListTile(),
             const Spacer(),
             const ProfileBottomRowButtons(),
-            const Gap(110),
+            110.verticalSpace,
           ],
         ),
       ),

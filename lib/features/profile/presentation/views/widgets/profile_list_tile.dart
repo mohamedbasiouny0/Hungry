@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/app_styles.dart';
@@ -13,12 +14,12 @@ class ProfileListTile extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: AppColors.primaryColor,
-        borderRadius: .circular(20),
+        borderRadius: .circular(20.r),
       ),
       child: ListTile(
         leading: SvgPicture.asset(
           Assets.imagesVisaSVG,
-          height: 72,
+          height: 72.h,
           fit: .cover,
           colorFilter: const ColorFilter.mode(Colors.white, .srcIn),
         ),
@@ -33,14 +34,14 @@ class ProfileListTile extends StatelessWidget {
         trailing: Radio<PaymentMethod>(
           fillColor: WidgetStateProperty.resolveWith((states) {
             if (states.contains(WidgetState.selected)) {
-              return Colors.white; // لما يكون متحدد
+              return Colors.white;
             }
-            return Colors.grey; // لما يكون مش متحدد (inactive)
+            return Colors.grey;
           }),
           value: PaymentMethod.visa,
           groupValue: PaymentMethod.visa,
         ),
-        minTileHeight: 80,
+        minTileHeight: 80.h,
       ),
     );
   }

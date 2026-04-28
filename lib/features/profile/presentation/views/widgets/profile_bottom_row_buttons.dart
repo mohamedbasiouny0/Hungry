@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/shared/widgets/custom_elevated_button.dart';
 
@@ -19,13 +19,13 @@ class ProfileBottomRowButtons extends StatelessWidget {
                   style: AppStyles.robtoMedium18.copyWith(color: Colors.white),
                 ),
                 const Spacer(),
-                const Icon(Icons.edit_rounded, size: 30, fontWeight: .w600),
+                Icon(Icons.edit_rounded, size: 30.sp, fontWeight: .w600),
               ],
             ),
             onPressed: () {},
           ),
         ),
-        const Gap(20),
+        20.horizontalSpace,
         Expanded(
           child: CustomElevatedButton(
             backgroundColor: Colors.red,
@@ -37,7 +37,7 @@ class ProfileBottomRowButtons extends StatelessWidget {
                   style: AppStyles.robtoMedium18.copyWith(color: Colors.white),
                 ),
                 const Spacer(),
-                const Icon(Icons.logout_rounded, size: 30, fontWeight: .w600),
+                Icon(Icons.logout_rounded, size: 30.sp, fontWeight: .w600),
               ],
             ),
             onPressed: () {},
