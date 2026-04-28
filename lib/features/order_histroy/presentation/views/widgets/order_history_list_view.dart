@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/features/order_histroy/presentation/views/widgets/order_history_item.dart';
 
 class OrderHistoryListView extends StatelessWidget {
@@ -7,7 +8,7 @@ class OrderHistoryListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      padding: const .only(bottom: 93, top: 50),
+      padding: .only(bottom: 93.h, top: 50.h),
       itemCount: 7,
       itemBuilder: (BuildContext context, int index) {
         return const OrderHistoryItem();

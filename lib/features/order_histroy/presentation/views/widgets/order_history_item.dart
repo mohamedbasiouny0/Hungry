@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/shared/widgets/custom_elevated_button.dart';
 import 'package:test2/features/home/presentation/views/widgets/burger_widget.dart';
@@ -13,7 +13,7 @@ class OrderHistoryItem extends StatelessWidget {
       color: Colors.white,
       elevation: 1,
       child: Padding(
-        padding: const .symmetric(horizontal: 16, vertical: 16),
+        padding: .symmetric(horizontal: 16.w, vertical: 16.h),
         child: Column(
           mainAxisSize: .min,
           children: [
@@ -32,7 +32,7 @@ class OrderHistoryItem extends StatelessWidget {
                 ),
               ],
             ),
-            const Gap(16),
+            16.verticalSpace,
             Row(
               children: [
                 Expanded(
