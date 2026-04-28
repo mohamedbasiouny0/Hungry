@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/shared/widgets/custom_elevated_button.dart';
@@ -16,25 +15,25 @@ class CustomDialog extends StatelessWidget {
         width: 340.w,
         height: 400.h,
         decoration: BoxDecoration(
-          borderRadius: .circular(20),
+          borderRadius: .circular(20.r),
           color: Colors.white,
         ),
         child: Column(
           children: [
-            const Gap(26),
+            26.verticalSpace,
             const DialogCheckmark(),
-            const Gap(26),
+            26.verticalSpace,
             Text('Success!', style: AppStyles.popBold30),
-            const Gap(10),
+            10.verticalSpace,
             Padding(
-              padding: const .symmetric(horizontal: 70),
+              padding: .symmetric(horizontal: 70.w),
               child: Text(
                 'Your payment was successful!\nA receipt for this purchase has been sent to your email.',
                 style: AppStyles.robtoRegular14,
                 textAlign: .center,
               ),
             ),
-            const Gap(52),
+            52.verticalSpace,
             CustomElevatedButton(
               text: 'Go back',
               onPressed: () => context.pop(),

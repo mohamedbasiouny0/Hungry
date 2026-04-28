@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/app_styles.dart';
 
@@ -21,7 +21,7 @@ class _PaymentCheckboxSectionState extends State<PaymentCheckboxSection> {
           onChanged: (value) => setState(() => selected = value),
           activeColor: Colors.redAccent,
         ),
-        const Gap(9),
+        9.horizontalSpace,
         Text(
           'Save card details for future payments',
           style: AppStyles.robtoRegular16.copyWith(

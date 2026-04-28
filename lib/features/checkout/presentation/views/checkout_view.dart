@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/features/checkout/presentation/views/widgets/custom_dialog.dart';
 import 'package:test2/features/checkout/presentation/views/widgets/order_summary_section.dart';
 import 'package:test2/features/checkout/presentation/views/widgets/payemnt_methods_section.dart';
@@ -13,12 +13,12 @@ class CheckoutView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           crossAxisAlignment: .start,
           children: [
             const OrderSummarySection(),
-            const Gap(40),
+            40.verticalSpace,
             const PayemntMethodsSection(),
             const Spacer(),
             CustomRow(
@@ -30,7 +30,7 @@ class CheckoutView extends StatelessWidget {
                 );
               },
             ),
-            const Gap(36),
+            36.verticalSpace,
           ],
         ),
       ),

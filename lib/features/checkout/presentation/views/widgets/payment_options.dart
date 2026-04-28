@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:gap/gap.dart';
 import 'package:test2/core/constant/app_colors.dart';
 import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/core/constant/assets.dart';
@@ -28,7 +28,7 @@ class _PaymentOptionsState extends State<PaymentOptions> {
             color: paymentMethod == PaymentMethod.cash
                 ? AppColors.primaryFontColor
                 : AppColors.unSelectedHomeCategoryItemColor,
-            borderRadius: .circular(20),
+            borderRadius: .circular(20.r),
           ),
           child: ListTile(
             title: Text(
@@ -39,13 +39,13 @@ class _PaymentOptionsState extends State<PaymentOptions> {
                     : AppColors.softGreyColor,
               ),
             ),
-            minTileHeight: 80,
+            minTileHeight: 80.h,
             leading: CircleAvatar(
               backgroundColor: const Color(0xff2B5901),
-              radius: 36,
+              radius: 36.r,
               child: SvgPicture.asset(
                 Assets.imagesDollarSVG,
-                height: 72,
+                height: 72.h,
                 colorFilter: const ColorFilter.mode(Colors.white, .srcIn),
               ),
             ),
@@ -58,34 +58,38 @@ class _PaymentOptionsState extends State<PaymentOptions> {
                 // selected = !selected;
               },
             ),
-            minLeadingWidth: 72,
+            minLeadingWidth: 72.w,
           ),
         ),
-        const Gap(27),
+        27.verticalSpace,
         AnimatedContainer(
           duration: const Duration(milliseconds: 300),
           decoration: BoxDecoration(
             color: paymentMethod == PaymentMethod.visa
                 ? AppColors.primaryFontColor
                 : AppColors.unSelectedHomeCategoryItemColor,
-            borderRadius: .circular(20),
+            borderRadius: .circular(20.r),
           ),
           child: ListTile(
             leading: SvgPicture.asset(
               Assets.imagesVisaSVG,
-              height: 72,
+              height: 72.h,
               fit: .cover,
             ),
             title: Text(
               'Debit card',
               style: AppStyles.robtoMeduim14.copyWith(
-                color: AppColors.softGreyColor,
+                color: paymentMethod == PaymentMethod.visa
+                    ? Colors.white
+                    : AppColors.softGreyColor,
               ),
             ),
             subtitle: Text(
               '3566 **** **** 0505',
               style: AppStyles.robtoMeduim14.copyWith(
-                color: AppColors.softGreyColor,
+                color: paymentMethod == PaymentMethod.visa
+                    ? Colors.white
+                    : AppColors.softGreyColor,
               ),
             ),
             trailing: Radio<PaymentMethod>(
@@ -95,7 +99,7 @@ class _PaymentOptionsState extends State<PaymentOptions> {
               onChanged: (value) =>
                   setState(() => paymentMethod = value as PaymentMethod),
             ),
-            minTileHeight: 80,
+            minTileHeight: 80.h,
           ),
         ),
       ],

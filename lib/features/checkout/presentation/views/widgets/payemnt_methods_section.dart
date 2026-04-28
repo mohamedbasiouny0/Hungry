@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test2/core/constant/app_styles.dart';
 import 'package:test2/features/checkout/presentation/views/widgets/payment_checkbox.dart';
 import 'package:test2/features/checkout/presentation/views/widgets/payment_options.dart';
@@ -21,9 +21,9 @@ class _PayemntMethodsSectionState extends State<PayemntMethodsSection> {
       crossAxisAlignment: .start,
       children: [
         Text('Payment methods', style: AppStyles.popSemiBold20),
-        const Gap(20),
+        20.verticalSpace,
         const PaymentOptions(),
-        const Gap(17),
+        17.verticalSpace,
         const PaymentCheckboxSection(),
       ],
     );
